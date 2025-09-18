@@ -1,0 +1,98 @@
+/* =======================
+   GENERAL STYLING
+========================== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f4f6f9;
+  color: #333;
+}
+
+h1, h2 {
+  color: #2c3e50;
+}
+
+button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* =======================
+   PART 1: CSS ONLY
+========================== */
+
+/* Transition effect on button hover */
+.hover-btn {
+  background: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.hover-btn:hover {
+  background: #2ecc71;
+  transform: scale(1.1);
+}
+
+/* Pulse animation with @keyframes */
+.pulse-box {
+  width: 80px;
+  height: 80px;
+  background: #e67e22;
+  margin-top: 20px;
+  border-radius: 10px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* =======================
+   PART 2: JS FUNCTIONS
+========================== */
+.box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  margin-top: 20px;
+  transition: transform 1s ease-in-out, background 0.5s ease;
+}
+.box.animate {
+  transform: translateX(200px) rotate(360deg);
+  background: #9b59b6;
+}
+
+/* =======================
+   PART 3: CSS + JS
+========================== */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  }
